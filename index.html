@@ -105,10 +105,23 @@
       </div>
     </section>
     
-    <section id="Resume" class="Resume">
-        <h1>My Resume</h1>
-        <img src="" alt="">
-    </section>
+<!-- Resume Section -->
+<section class="resume">
+    <h2>Your Resume</h2>
+    <div class="resume-images">
+        <!-- Example Image in Resume (with higher resolution) -->
+        <img src="CV.png" alt="Resume Image" class="resume-image">
+        <!-- More images if necessary -->
+    </div>
+</section>
+
+<!-- Modal for Zoomed Image -->
+<div id="image-modal" class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <img id="modal-img" src="" alt="Zoomed Image">
+</div>
+
+
     
     <section id="work" class="work">
       <h2 class="section-title">My Work</h2>
@@ -152,3 +165,22 @@
   </footer>
 </body>
 </html>
+
+<script>
+// JavaScript to handle image zoom
+document.querySelectorAll('.resume-image').forEach(image => {
+    image.addEventListener('click', function () {
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        modal.style.display = 'flex'; // Show the modal
+        modalImg.src = this.src; // Set the image source for the modal
+    });
+});
+
+function closeModal() {
+    const modal = document.getElementById('image-modal');
+    modal.style.display = 'none'; // Hide the modal
+}
+
+
+</script>
